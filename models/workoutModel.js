@@ -16,6 +16,10 @@ const workoutSchema = new Schema(
       type: Number,
       required: true,
     },
+    picture: {
+      type: String, // Assuming you're storing the file path as a string
+      required: false, // Change to true if pictures are always required
+    },
     user_id: {
       type: String,
       required: true,

@@ -1,4 +1,4 @@
-const User = require("../models/userModel");
+const User = require("../models/user");
 const jwt = require("jsonwebtoken");
 
 const createToken = (_id) => {
@@ -15,7 +15,9 @@ const loginUser = async (req, res) => {
     // create a token
     const token = createToken(user._id);
 
-    res.status(200).json({ email, token });
+    res
+      .status(200)
+      .json({ email, username: user.username, token, role: user.role });
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
@@ -23,19 +25,24 @@ const loginUser = async (req, res) => {
 
 // signup a user
 const signupUser = async (req, res) => {
-  const { email, password } = req.body;
+  const { email, password, username, role, confirmPassword } = req.body;
+
+  // Check if passwords match
+  if (password !== confirmPassword) {
+    return res.status(400).json({ error: "Passwords do not match" });
+  }
 
   try {
-    const user = await User.signup(email, password);
+    const user = await User.signup(email, password, username);
 
-    // Set the user role to "user"
-    user.role = "user";
+    // Set the user's role from the request body
+    user.role = role || "user"; // Default to "user" if role is not provided
     await user.save();
 
     // create a token
     const token = createToken(user._id);
 
-    res.status(200).json({ email, token });
+    res.status(200).json({ email, username, token, role: user.role });
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
