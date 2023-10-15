@@ -50,7 +50,7 @@ const createWorkout = async (req, res) => {
 
   if (!req.file) {
     // Check if a file is uploaded
-    return res.status(400).json({ error: "Please upload a picture" });
+    return res.status(400).json({ error: "Please upload a picture or a pdf" });
   }
 
   // add doc to db
@@ -62,6 +62,7 @@ const createWorkout = async (req, res) => {
       reps,
       user_id,
       picture: req.file.filename, // Save the filename to the database
+      pdf: req.file.filename, // Save the filename to the database
     });
     res.status(200).json(workout);
   } catch (error) {
