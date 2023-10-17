@@ -9,8 +9,18 @@ const {
 const requireAuth = require("../middleware/requireAuth");
 
 const multer = require("multer");
-const uploadImage = multer({ dest: "uploads/images" }); // Use the same destination as configured above
-const uploadPDF = multer({ dest: "uploads/pdfs" });
+const path = require("path");
+
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "uploads/");
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + "-" + file.originalname);
+  },
+});
+// const uploadImage = multer({ dest: "uploads/images" }); // Use the same destination as configured above
+const upload = multer({ storage: storage });
 
 const router = express.Router();
 
@@ -24,17 +34,22 @@ router.get("/", getWorkouts);
 router.get("/:id", getWorkout);
 
 // POST a new workout with picture and PDF upload
-router.post("/", async (req, res) => {
-  try {
-    await uploadImage.single("picture")(req, res);
-    await uploadPDF.single("pdf")(req, res);
-    createWorkout(req, res);
-  } catch (error) {
-    res
-      .status(500)
-      .json({ error: "Internal Server Error", details: error.message });
+router.post(
+  "/",
+  upload.fields([
+    { name: "picture", maxCount: 1 },
+    { name: "pdf", maxCount: 1 },
+  ]),
+  async (req, res) => {
+    try {
+      createWorkout(req, res);
+    } catch (error) {
+      res
+        .status(500)
+        .json({ error: "Internal Server Error", details: error.message });
+    }
   }
-});
+);
 
 // DELETE a workout
 router.delete("/:id", deleteWorkout);

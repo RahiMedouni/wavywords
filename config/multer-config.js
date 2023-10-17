@@ -1,20 +1,32 @@
-const multer = require("multer");
+// const multer = require("multer");
 
-const imageStorage = multer.diskStorage({
-  destination: "uploads/images",
-  filename: function (req, file, cb) {
-    cb(null, Date.now() + "-" + file.originalname);
-  },
-});
+// const imageStorage = multer.diskStorage({
+//   destination: function (req, file, cb) {
+//     cb(null, "uploads/images");
+//   },
+//   filename: function (req, file, cb) {
+//     cb(null, Date.now() + "-" + file.originalname);
+//   },
+// });
 
-const pdfStorage = multer.diskStorage({
-  destination: "uploads/pdfs",
-  filename: function (req, file, cb) {
-    cb(null, Date.now() + "-" + file.originalname);
-  },
-});
+// const pdfStorage = multer.diskStorage({
+//   destination: function (req, file, cb) {
+//     cb(null, "uploads/pdfs");
+//   },
+//   filename: function (req, file, cb) {
+//     cb(null, Date.now() + "-" + file.originalname);
+//   },
+// });
 
-const uploadImage = multer({ storage: imageStorage });
-const uploadPDF = multer({ storage: pdfStorage });
+// const fileFilter = (req, file, cb) => {
+//   if (file.mimetype === "application/pdf") {
+//     cb(null, true);
+//   } else {
+//     cb(null, false);
+//   }
+// };
 
-module.exports = { uploadImage, uploadPDF };
+// const uploadImage = multer({ storage: imageStorage });
+// const uploadPDF = multer({ storage: pdfStorage, fileFilter: fileFilter });
+
+// module.exports = { uploadImage, uploadPDF };
