@@ -1,0 +1,86 @@
+.container-fluid {
+    background-color: #FFFFFF;
+}
+
+.navbar {
+    background-color: #FFFFFF;
+}
+.navbar-brand {
+    color: 'white';
+    font-size: 25.60px;
+    font-family: 'Poppins ExtraBold';
+    font-weight: 800;
+    word-wrap: break-word;
+    top: 0px;
+    height: 41px;
+    width: 185px;
+    margin-left: 10%;
+}
+
+.offcanvas-body {
+    height: 42px;
+    top: 11px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.nav-item {
+    width: 100px;
+    height: 42px;
+    top: 1;
+    color: black;
+    font-size: 14px;
+    font-family: "poppins";
+}
+
+.nav-item-lang {
+    width: 100px;
+    height: 42px;
+    top: 1;
+    color: black;
+    font-size: 14px;
+    font-family: "poppins";
+    margin-left: 0px;
+}
+
+
+.lang {
+    margin-top: 4px
+}
+
+.navbar-toggler {
+    font-size: 10px !important;
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1050px) {
+    .nav-item-lang {
+        width: 50px;
+    }
+}
+
+@media only screen and (min-width: 1150px) {
+    .nav-item-lang {
+        margin-left: 100px;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+
+    .navbar-brand {
+        font-size: 6px;
+        font-weight: 400;
+        height: 41px;
+        width: 70px;
+        margin-left: 5%;
+    }
+
+    #landropdown {
+        width: 50px;
+    }
+
+    .navbar-toggler {
+      font-size: 6px !important; /* Larger font size for small screens */
+    }
+}
