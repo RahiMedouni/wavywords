@@ -3,7 +3,9 @@ import BookCarousel from "../Components/BookCarousel";
 
 function LandingPage() {
   return (
-    <div>
+    <div style={{
+      textAlign: "center"
+    }}>
       <div
         style={{
           display: "flex",
@@ -12,6 +14,10 @@ function LandingPage() {
           minHeight: "100vh",
         }}>
         <BookCarousel />
+      </div>
+      <div
+        className="popular-books--section">
+        <h3>Popular Books</h3>
       </div>
     </div>
   );
