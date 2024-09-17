@@ -1,0 +1,59 @@
+.card--container{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    text-align: start;
+    font-family: "poppins";
+   
+}
+.image--container{
+    background-color: rgb(218, 218, 218);
+    padding: .6em;
+    text-align: center;
+    
+
+}
+
+.book-cover{
+    width: 10rem;
+    align-self: center;
+}
+
+.title{
+    padding-top: 1rem;
+    font-size: 1.5rem;
+    font-weight: SemiBold;
+    margin: 0;
+}
+
+.author{
+    font-size: .8rem;
+    font-weight: 400;
+    
+}
+.description{
+    font-size: .7rem;
+    font-weight: 400;
+}
+
+.order--section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price{
+    margin: 0;
+    font-weight: 500;
+    
+}
+
+.cta--button{
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 2rem;
+    padding-inline: .8rem;
+    padding-block: .1rem;
+    font-size: .8rem;
+    font-weight: 500;
+}

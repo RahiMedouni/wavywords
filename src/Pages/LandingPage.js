@@ -1,5 +1,7 @@
-import React from "react";
-import BookCarousel from "../Components/BookCarousel";
+import React from "react"
+import BookCarousel from "../Components/BookCarousel"
+import BookCard from "../Components/BookCard.jsx"
+import "./LandingPage.css"
 
 function LandingPage() {
   return (
@@ -15,9 +17,12 @@ function LandingPage() {
         }}>
         <BookCarousel />
       </div>
-      <div
-        className="popular-books--section">
-        <h3>Popular Books</h3>
+      <h3>Popular Books</h3>
+      <div className="popular-books--section">
+          
+        <BookCard />
+        <BookCard />
+        <BookCard />
       </div>
     </div>
   );
