@@ -8,7 +8,7 @@
 }
 .image--container{
     position: relative;
-    background-color: rgb(218, 218, 218);
+    background-color: rgb(226, 226, 226);
     padding: .6em;
     text-align: center;
     
@@ -22,12 +22,13 @@
 
 .title{
     padding-top: 1rem;
-    font-size: 1.5rem;
-    font-weight: SemiBold;
+    font-size: 1.2rem;
+    font-weight: bold;
     margin: 0;
 }
 
 .author{
+    padding-top: .5rem;
     font-size: .8rem;
     font-weight: 400;
     

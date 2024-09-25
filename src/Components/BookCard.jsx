@@ -20,7 +20,7 @@ export default function BookCard() {
            <img src={isChecked ? fullHeart : emptyHeart } alt="add to wishlist" />
         </label>
     </div>
-    <h3 className="title">Rich dad Poor dad</h3>
+    <h3 className="title">RICH DAD POOR DAD</h3>
     <h4 className="author">Robert T.kiyosaki</h4>
     <p className="description">rem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea  commodo consequat. Duis aute irure  </p>
     <div className="order--section">
