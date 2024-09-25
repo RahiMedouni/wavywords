@@ -7,6 +7,7 @@
    
 }
 .image--container{
+    position: relative;
     background-color: rgb(218, 218, 218);
     padding: .6em;
     text-align: center;
@@ -56,4 +57,21 @@
     padding-block: .1rem;
     font-size: .8rem;
     font-weight: 500;
+}
+
+.heart{
+    image-rendering: inherit;
+    position: absolute;
+    top: 0;
+    right: 5px;
+    
+}
+
+.heart img{
+    width: 2rem;
+    height: 2rem;
+}
+
+.heart-checkbox{
+    display: none;
 }

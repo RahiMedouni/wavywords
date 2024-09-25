@@ -1,50 +1,54 @@
 import React from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { Link } from "react-router-dom";
 import IconButton from "@mui/material/IconButton";
 import StarIcon from "@mui/icons-material/Star";
 import ClearIcon from "@mui/icons-material/Clear";
+import bookCover from "../.././assets/book-cover.jpg"
 import { useAuthContext } from "../../hooks/useAuthContext";
 import { useBooksContext } from "../../hooks/useBooksContext";
 
+
 const BookCards = (props) => {
-  const { user } = useAuthContext();
-  const { dispatch } = useBooksContext();
+  // const { user } = useAuthContext();
+  // const { dispatch } = useBooksContext();
 
-  const handleAdminDelete = async () => {
-    if (!user) {
-      return;
-    }
+  // const handleAdminDelete = async () => {
+  //   if (!user) {
+  //     return;
+  //   }
 
-    try {
-      const response = await fetch(`/api/books/${props.book._id}`, {
-        method: "DELETE",
-        headers: {
-          Authorization: `Bearer ${user.token}`,
-        },
-      });
+  //   try {
+  //     const response = await fetch(`/api/books/${props.book._id}`, {
+  //       method: "DELETE",
+  //       headers: {
+  //         Authorization: `Bearer ${user.token}`,
+  //       },
+  //     });
 
-      if (response.ok) {
-        dispatch({ type: "DELETE_BOOK", payload: props.book._id });
-      }
-    } catch (error) {
-      console.error("Delete book error:", error);
-    }
-  };
+  //     if (response.ok) {
+  //       dispatch({ type: "DELETE_BOOK", payload: props.book._id });
+  //     }
+  //   } catch (error) {
+  //     console.error("Delete book error:", error);
+  //   }
+  // };
 
   // Check if props.book is defined
-  if (!props.book) {
+  if (!props) {
     return null; // Render nothing if book is undefined
   }
 
-  const {
-    title,
-    author,
-    description,
-    category,
-    price,
-    frontCover,
-    addedToWish,
-  } = props.book;
+  // const {
+  //   title,
+  //   author,
+  //   description,
+  //   category,
+  //   price,
+  //   frontCover,
+  //   addedToWish,
+  // } = props;
 
   return (
     <div className='container justify-content-evenly'>
@@ -54,12 +58,12 @@ const BookCards = (props) => {
             <div className='container'>
               <img
                 className='card-img-top py-2 px-0 rounded-2'
-                src={`/uploads/${frontCover}`}
+                src={bookCover}
                 alt='Books'
               />
-              <p className='btnn'>{category}</p>
+              <p className='btnn'>{props.category}</p>
             </div>
-            <Link to={"/store/" + title} style={{ textDecoration: "none" }}>
+            <Link to={"/store/" + props.title} style={{ textDecoration: "none" }}>
               <div className='card-body img-fluid p-0'>
                 <span
                   style={{
@@ -70,10 +74,10 @@ const BookCards = (props) => {
                   <h4
                     className='card-title'
                     style={{ fontSize: 16, textAlign: "center" }}>
-                    {title}
+                    {props.title}
                   </h4>
-                  <h6 className='card-subtitle mb-2 text-muted'>{author}</h6>
-                  <p className='lh-sm'>{description}</p>
+                  <h6 className='card-subtitle mb-2 text-muted'>{props.author}</h6>
+                  <p className='lh-sm'>{props.description}</p>
                 </span>
               </div>
             </Link>
@@ -83,7 +87,8 @@ const BookCards = (props) => {
                 <div className='col d-flex justify-content-between align-items-center m-1'>
                   <IconButton
                     className='btn'
-                    onClick={() => handleAdminDelete(title)}>
+                    // onClick={() => handleAdminDelete(title)}
+                    >
                     <ClearIcon
                       style={{
                         color: "red",
@@ -94,16 +99,17 @@ const BookCards = (props) => {
                   </IconButton>
 
                   <IconButton
-                    onClick={() => {
-                      if (props.book) {
-                        if (props.book.addedToWish) {
-                          props.handleDeleteWish(props.book.title);
-                        } else {
-                          props.addToWish(props.index);
-                        }
-                        props.updateWish(props.index);
-                      }
-                    }}>
+                    // onClick={() => {
+                    //   if (props.book) {
+                    //     if (props.book.addedToWish) {
+                    //       props.handleDeleteWish(props.book.title);
+                    //     } else {
+                    //       props.addToWish(props.index);
+                    //     }
+                    //     props.updateWish(props.index);
+                    //   }
+                    // }}
+                    >
                     <StarIcon
                       style={{
                         color:
@@ -121,7 +127,7 @@ const BookCards = (props) => {
 
             <div className='card-footer d-flex align-items-center justify-content-between'>
               <div className='d-flex align-items-center'>
-                <h5 className='mt-2'>{price}$</h5>
+                <h5 className='mt-2'>{props.price}$</h5>
               </div>
             </div>
           </div>
