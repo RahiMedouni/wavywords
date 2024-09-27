@@ -1,0 +1,27 @@
+.about-us--section{
+    background-color: black;
+    color: white;
+    padding-block: 3rem;
+    
+}
+
+.about-us--container{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding-inline: 22%;
+    padding-block: 2rem;
+    text-align: start;
+}
+
+.about-us--image{
+    padding: 0;
+    height: 15rem;
+    width: 15rem;
+    background-color: rgb(66, 66, 66);
+    margin-inline-end: 3rem;
+}
+
+.about-us--description{
+    width: 60%;
+}

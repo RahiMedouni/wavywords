@@ -1,6 +1,7 @@
 import React from "react"
 import BookCarousel from "../Components/BookCarousel.js"
 import BookCard from "../Components/BookCard.jsx"
+import AboutUsSection from "../Components/AboutUsSection.jsx"
 import BestSellerCard from "../Components/BestSellerCard.jsx"
 import BookCards from "./books/BookCards.js"
 
@@ -22,17 +23,18 @@ function LandingPage() {
         }}>
         <BookCarousel />
       </div>
-      <h3>Popular Books</h3>
+      <h3 className ="section--title">Popular Books</h3>
       <div className="popular-books--section">
           
         <BookCard />
         <BookCard />
         <BookCard />
       </div>
-      <h3>Best Seller</h3>
+      <h3 className ="section--title">Best Seller</h3>
       <div className="best-seller--section">
          <BestSellerCard />
       </div>
+      <AboutUsSection />
     </div>
   );
 }
