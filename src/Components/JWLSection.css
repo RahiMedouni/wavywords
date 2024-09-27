@@ -1,0 +1,31 @@
+.jwl--section{
+    display: flex;
+    column-gap: 1.2rem;
+    /* justify-content: space-between; */
+    align-items: center;
+    padding-inline: 25%;
+    padding-block: 2rem;
+    margin-bottom: 5rem;
+}
+.jwl--input{
+    width: 75%;
+    border-radius: 3rem;
+    border: 1px black solid;
+    padding-block: 1rem;
+    font-size: 1.2rem;
+    font-weight: 800;
+    padding-inline-start: 2rem;
+
+}
+.jwl--btn{
+    background-color: black;
+    color: white;
+    font-family: 'poppins';
+    font-weight: 700;
+    font-size: 1.1rem;
+    border: black 1px solid;
+    border-radius: 3rem;
+    padding-inline: 2rem;
+    padding-block: 1rem;
+
+}

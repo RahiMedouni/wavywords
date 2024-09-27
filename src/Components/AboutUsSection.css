@@ -2,6 +2,7 @@
     background-color: black;
     color: white;
     padding-block: 3rem;
+    margin-block: 6rem;
     
 }
 
@@ -10,7 +11,7 @@
     align-items: center;
     justify-content: start;
     padding-inline: 22%;
-    padding-block: 2rem;
+    padding-block: 3rem;
     text-align: start;
 }
 
