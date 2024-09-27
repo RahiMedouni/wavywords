@@ -4,6 +4,7 @@ import BookCard from "../Components/BookCard.jsx"
 import AboutUsSection from "../Components/AboutUsSection.jsx"
 import BestSellerCard from "../Components/BestSellerCard.jsx"
 import JWLSection from "../Components/JWLSection.jsx"
+import Footer from "../Components/Footer.jsx"
 import BookCards from "./books/BookCards.js"
 
 
@@ -38,6 +39,7 @@ function LandingPage() {
       <AboutUsSection />
       <h3 className ="section--title">Join our wait list</h3>
       <JWLSection />
+      <Footer />
     </div>
   );
 }

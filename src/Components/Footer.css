@@ -1,0 +1,40 @@
+.footer{
+    display: flex;
+    flex-direction: column;
+    padding-inline: 25%;
+    background-color: black;
+    color: white;
+    text-align: start;
+    padding-top: 2rem;
+    font-family: 'poppins';
+}
+
+.footerpts{
+    display: flex;
+    justify-content: space-between;
+}
+
+.footerpt{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+
+}
+.footer--title{
+    font-size: 1.2rem;
+    
+    font-weight: 700;
+    padding-block: 2rem;
+}
+
+.element{
+    padding-block: .5rem;
+    font-size: 1.2rem;
+    font-weight: 200;
+}
+
+.copyrights{
+    text-align: center;
+    font-size: 1.1rem;
+    padding-top: 2.5rem;
+}
