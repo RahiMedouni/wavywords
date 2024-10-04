@@ -1,0 +1,95 @@
+.store--page{
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    font-family: 'poppins';
+   
+}
+
+.filters--section{
+    width: 25%;
+    padding-left: 2rem;
+    padding-top: 3rem;
+
+}
+
+.filters--title{
+display: flex;
+align-items: center;
+}
+
+.filters--title img{
+    width: 1.5rem;
+}
+
+.filters--title h3{
+    font-size: 1.1rem;
+    margin: 0;
+    padding-left: .5rem;
+    font-weight: 800;
+}
+
+.filters--container{
+    padding-top: 5rem;
+}
+
+.filter-type{
+    
+}
+
+.filter-type .title{
+    font-size: .7rem;
+    font-weight: 800;
+}
+
+.filter-type p{
+    font-size: .5rem;
+    font-weight: 300;
+    margin: 0;
+}
+
+.line{
+    background-color: black;
+    width: 2.5px;
+    height: 100rem;
+}
+.books--section{
+    width: 100%;
+}
+.search-bar{
+    padding-block: 4rem;
+    padding-inline: 5%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-bar input{
+    font-size: .8rem;
+    padding-inline: 2rem;
+    padding-block: .2rem;
+    width: 85%;
+    border: 1px solid black;
+    border-radius: 30px;
+}
+
+.search-bar button{
+    background-color: black;
+    color: white;
+    font-family: 'poppins';
+    padding-inline: 2rem;
+    font-size: .8rem;
+    border: 1px solid black;
+    border-radius: 30px;
+    height: auto;
+}
+
+.books--container{
+    display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 5%;
+    padding-inline: 10%;
+    padding-block: 1rem;
+    margin-bottom: 3rem;
+
+}

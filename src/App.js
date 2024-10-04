@@ -3,7 +3,7 @@ import Navbar from "./Components/Navigation";
 import "bootstrap/dist/js/bootstrap.bundle";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Route, Routes } from "react-router-dom";
-import Store from "./Pages/Store";
+import Store from "./Pages/Store.jsx";
 import StoreAdmin from "./Pages/StoreAdmin";
 import ProfileAuthor from "./Pages/ProfileAuthor";
 import Contactus from "./Pages/Contactus";

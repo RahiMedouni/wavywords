@@ -1,0 +1,67 @@
+.bc-card--container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+    font-family: 'poppins';
+    width: 9rem;
+    /* background-color: blueviolet; */
+}
+
+.bc-cover--container{
+    width: 100%;
+}
+
+.bc-cover--container img{
+    width: 100%;
+
+}
+
+.bc-details{
+    padding-top: 1rem;
+    text-align: start;
+   /* background-color: aqua; */
+}
+
+.bc-title{
+    font-size: .6rem;
+    font-weight: 700;
+    margin: 0;
+
+}
+.bc-author{
+    padding-top: 0;
+    font-size: .4rem;
+    font-weight: 600;
+    font-family: 'poppins';
+    margin: 0;
+
+}
+
+.bc--order-btn{
+    margin-top: 1rem;
+    background-color: rgb(255, 0, 0);
+    border: 1px solid rgb(255, 0, 0);
+    color: white;
+    font-family: 'poppins';
+    border-radius: 3rem;
+    padding-inline: .9rem;
+    padding-block: .2rem;
+    font-size: .5rem;
+    font-weight: 600;
+}
+
+.price{
+    font-size: .6rem;
+    font-weight: 500;
+    font-family: 'poppins';
+    margin: 0;
+}
+.order--section{
+  display: flex;
+  align-items: center;
+  
+}
+
+.rating{
+    margin: 0;
+}
