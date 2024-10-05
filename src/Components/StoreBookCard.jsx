@@ -2,10 +2,11 @@ import React from 'react'
 import bookCover from ".././assets/book-cover.jpg"
 import stars from ".././assets/rating.png"
 import './StoreBookCard.css'
+import { NavLink, Link } from "react-router-dom";
 
 export default function StoreBookCard() {
   return (
-    <div className="bc-card--container">
+    <Link to="/store/:id" className="bc-card--container">
           <div className="bc-cover--container">
             <img src={bookCover} alt="book cover" />
           </div>
@@ -21,6 +22,6 @@ export default function StoreBookCard() {
                 <button className="bc--order-btn">add</button>
             </div>
           </div>
-    </div>
+    </Link>
   )
 }

@@ -11,6 +11,7 @@ import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
 import SignupAuthor from "./Pages/SignupAuthor";
 import LandingPage from "./Pages/LandingPage";
+import BookDetails from "./Pages/BookDetails.jsx";
 import { useAuthContext } from "./hooks/useAuthContext";
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<Signup />} />
         <Route path='/signupauthor' element={<SignupAuthor />} />
+        <Route path='/store/:id' element={<BookDetails />} />
       </Routes>
     </div>
   );

@@ -5,6 +5,8 @@
     font-family: 'poppins';
     width: 9rem;
     /* background-color: blueviolet; */
+    text-decoration: none;
+    color: inherit;
 }
 
 .bc-cover--container{
@@ -65,3 +67,5 @@
 .rating{
     margin: 0;
 }
+
+

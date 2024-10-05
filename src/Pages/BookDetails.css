@@ -1,0 +1,78 @@
+.page--container{
+    font-family: 'poppins';
+    display: flex;
+    justify-content: center;
+
+}
+
+.book-details--container{
+    
+    padding-block: 5rem;
+    display: flex;
+    justify-content: space-between;
+    /* background-color: blue; */
+    width: 75%;
+
+}
+
+.section-1{
+    width: 18rem;
+}
+
+.section-1 img{
+    width: 95%;
+}
+
+.section-1 .isbn{
+    margin: 0;
+   padding-top: 1.5rem;
+   font-size: 1.2rem;
+}
+
+.section-1 .rating{
+    width: 50%;
+    padding-block: 1rem;
+}
+
+.section-1 .price{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.section-2{
+    padding-left: 1rem;
+    max-width: 70%;
+    /* background-color: aqua; */
+}
+
+.section-2 .title{
+    font-size: 2rem;
+}
+
+.section-2 .author{
+    font-size: 1.2rem;
+}
+
+.large-font{
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+    padding-block: .8rem;
+    
+}
+
+.sm-logo{
+    width: 2rem;
+    margin-inline: .5rem;
+}
+
+.social-media{
+    
+    display: flex;
+    align-items: center;
+}
+
+.phone-number{
+    display: flex;
+    align-items: center;
+}
