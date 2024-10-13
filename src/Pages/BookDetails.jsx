@@ -6,8 +6,16 @@ import X from ".././assets/x-lg.png"
 import Phone from ".././assets/whatsapp-lg.png"
 import stars from ".././assets/rating.png"
 import "./BookDetails.css"
+import PdfViewer from "../Components/PdfViewer.jsx"
+import { pdfjs } from 'react-pdf';
+
+pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+    'pdfjs-dist/build/pdf.worker.min.mjs',
+    import.meta.url,
+  ).toString();
 
 export default function BookDetails() {
+    
   return (
     <div className="page--container">
         <div className="book-details--container">
@@ -33,8 +41,10 @@ export default function BookDetails() {
                     <img src={Phone} alt="" className="sm-logo" />
                     <p className="large-font">+213 540 123 009</p>
                 </div>
+                
             </div>
         </div>
+        {/* <PdfViewer /> */}
     </div>
   )
 }

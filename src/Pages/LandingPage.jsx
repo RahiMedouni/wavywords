@@ -5,6 +5,7 @@ import AboutUsSection from "../Components/AboutUsSection.jsx"
 import BestSellerCard from "../Components/BestSellerCard.jsx"
 import JWLSection from "../Components/JWLSection.jsx"
 import Footer from "../Components/Footer.jsx"
+import bookCover from ".././assets/book-cover.jpg"
 import BookCards from "./books/BookCards.js"
 
 
@@ -28,9 +29,27 @@ function LandingPage() {
       <h3 className ="section--title">Popular Books</h3>
       <div className="popular-books--section">
           
-        <BookCard />
-        <BookCard />
-        <BookCard />
+        <BookCard 
+        title="RICH DAD POOR DAD"
+                author="Robert T.kiyosaki"
+                price="2500 DA"
+                frontCover={bookCover}
+                description=""
+        />
+        <BookCard 
+        title="RICH DAD POOR DAD"
+                author="Robert T.kiyosaki"
+                price="2500 DA"
+                frontCover={bookCover}
+                description=""
+        />
+        <BookCard 
+        title="RICH DAD POOR DAD"
+                author="Robert T.kiyosaki"
+                price="2500 DA"
+                frontCover={bookCover}
+                description=""
+        />
       </div>
       <h3 className ="section--title">Best Seller</h3>
       <div className="best-seller--section">

@@ -11,44 +11,44 @@ import { useBooksContext } from "../../hooks/useBooksContext";
 
 
 const BookCards = (props) => {
-  // const { user } = useAuthContext();
-  // const { dispatch } = useBooksContext();
+  const { user } = useAuthContext();
+  const { dispatch } = useBooksContext();
 
-  // const handleAdminDelete = async () => {
-  //   if (!user) {
-  //     return;
-  //   }
+  const handleAdminDelete = async () => {
+    if (!user) {
+      return;
+    }
 
-  //   try {
-  //     const response = await fetch(`/api/books/${props.book._id}`, {
-  //       method: "DELETE",
-  //       headers: {
-  //         Authorization: `Bearer ${user.token}`,
-  //       },
-  //     });
+    try {
+      const response = await fetch(`/api/books/${props.book._id}`, {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${user.token}`,
+        },
+      });
 
-  //     if (response.ok) {
-  //       dispatch({ type: "DELETE_BOOK", payload: props.book._id });
-  //     }
-  //   } catch (error) {
-  //     console.error("Delete book error:", error);
-  //   }
-  // };
+      if (response.ok) {
+        dispatch({ type: "DELETE_BOOK", payload: props.book._id });
+      }
+    } catch (error) {
+      console.error("Delete book error:", error);
+    }
+  };
 
   // Check if props.book is defined
   if (!props) {
     return null; // Render nothing if book is undefined
   }
 
-  // const {
-  //   title,
-  //   author,
-  //   description,
-  //   category,
-  //   price,
-  //   frontCover,
-  //   addedToWish,
-  // } = props;
+  const {
+    title,
+    author,
+    description,
+    category,
+    price,
+    frontCover,
+    addedToWish,
+  } = props;
 
   return (
     <div className='container justify-content-evenly'>

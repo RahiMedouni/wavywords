@@ -3,8 +3,85 @@ import "./Store.css"
 import filterIcon from ".././assets/filter.png"
 import StoreBookCard from "../Components/StoreBookCard.jsx"
 import Footer from "../Components/Footer.jsx"
+import bookCover from ".././assets/book-cover.jpg"
+import  { useState, useEffect } from "react";
+import { Routes, Route, useNavigate, useParams } from "react-router-dom";
+import WishedBooks from "./books/WishedBooks";
+import { useBooksContext } from "../hooks/useBooksContext";
+import { useAuthContext } from "../hooks/useAuthContext";
 
 export default function Store() {
+
+    const { books, dispatch } = useBooksContext();
+    const { user } = useAuthContext();
+    const navigate = useNavigate();
+  
+    useEffect(() => {
+      const fetchBooks = async () => {
+        if (user && user.token) {
+          try {
+            const response = await fetch("/api/books/reader", {
+              headers: {
+                Authorization: `Bearer ${user.token}`,
+              },
+            });
+  
+            if (response.ok) {
+              const json = await response.json();
+              dispatch({ type: "SET_BOOKS", payload: json });
+            } else if (response.status === 401) {
+              // Handle unauthorized access, e.g., redirect to login
+              navigate("/login");
+            } else {
+              // Handle other errors
+              console.error("Error fetching books:", response.status);
+            }
+          } catch (error) {
+            // Handle network or other errors
+            console.error("Fetch error:", error);
+          }
+        }
+      };
+  
+      fetchBooks();
+      // }, [dispatch, navigate]);
+    }, [dispatch, user, navigate]);
+  
+    const [title, setTitle] = useState("");
+  
+    const [wishedList, setWishedList] = useState(
+      JSON.parse(localStorage.getItem("wishedList")) || []
+    );
+  
+    useEffect(() => {
+      localStorage.setItem("wishedList", JSON.stringify(wishedList));
+    }, [wishedList]);
+  
+    const updateWish = (index) => {
+      if (books[index] && books[index].addedToWish !== undefined) {
+        const updatedBooks = [...books];
+        updatedBooks[index] = {
+          ...updatedBooks[index],
+          addedToWish: !updatedBooks[index].addedToWish,
+        };
+        dispatch({ type: "SET_BOOKS", payload: updatedBooks });
+      }
+    };
+  
+    const addToWish = (index) => {
+      if (books[index]) {
+        setWishedList((prevWishedList) => [...prevWishedList, books[index]]);
+      }
+    };
+  
+    useEffect(() => {
+      console.log(wishedList);
+    }, [wishedList]);
+  
+    const handleDeleteWish = (bookTitle) => {
+      setWishedList(wishedList.filter((book) => book.title !== bookTitle));
+    };
+
   return (
     <>
     <div className="store--page">
@@ -75,25 +152,120 @@ export default function Store() {
 
             </div>
             <div className="books--container">
-                <StoreBookCard />
-                <StoreBookCard />
-                <StoreBookCard />
-                <StoreBookCard />
-                <StoreBookCard />
-                <StoreBookCard />
-                <StoreBookCard />
-                <StoreBookCard />
-                <StoreBookCard />
-                <StoreBookCard />
-                <StoreBookCard />
-                <StoreBookCard />
-                <StoreBookCard />
-                <StoreBookCard />
-                <StoreBookCard />
-                <StoreBookCard />
-                <StoreBookCard />
-                <StoreBookCard />
-                <StoreBookCard />
+                <StoreBookCard 
+                title="RICH DAD POOR DAD"
+                author="Robert T.kiyosaki"
+                price="2500 DA"
+                frontCover={bookCover}
+                />
+                <StoreBookCard 
+                title="RICH DAD POOR DAD"
+                author="Robert T.kiyosaki"
+                price="2500 DA"
+                frontCover={bookCover}
+                />
+                <StoreBookCard 
+                title="RICH DAD POOR DAD"
+                author="Robert T.kiyosaki"
+                price="2500 DA"
+                frontCover={bookCover}
+                />
+                <StoreBookCard 
+                title="RICH DAD POOR DAD"
+                author="Robert T.kiyosaki"
+                price="2500 DA"
+                frontCover={bookCover}
+                />
+                <StoreBookCard 
+                title="RICH DAD POOR DAD"
+                author="Robert T.kiyosaki"
+                price="2500 DA"
+                frontCover={bookCover}
+                />
+                <StoreBookCard 
+                title="RICH DAD POOR DAD"
+                author="Robert T.kiyosaki"
+                price="2500 DA"
+                frontCover={bookCover}
+                />
+                <StoreBookCard 
+                title="RICH DAD POOR DAD"
+                author="Robert T.kiyosaki"
+                price="2500 DA"
+                frontCover={bookCover}
+                />
+                <StoreBookCard 
+                title="RICH DAD POOR DAD"
+                author="Robert T.kiyosaki"
+                price="2500 DA"
+                frontCover={bookCover}
+                />
+                <StoreBookCard 
+                title="RICH DAD POOR DAD"
+                author="Robert T.kiyosaki"
+                price="2500 DA"
+                frontCover={bookCover}
+                />
+                <StoreBookCard 
+                title="RICH DAD POOR DAD"
+                author="Robert T.kiyosaki"
+                price="2500 DA"
+                frontCover={bookCover}
+                />
+                <StoreBookCard 
+                title="RICH DAD POOR DAD"
+                author="Robert T.kiyosaki"
+                price="2500 DA"
+                frontCover={bookCover}
+                />
+                <StoreBookCard 
+                title="RICH DAD POOR DAD"
+                author="Robert T.kiyosaki"
+                price="2500 DA"
+                frontCover={bookCover}
+                />
+                <StoreBookCard 
+                title="RICH DAD POOR DAD"
+                author="Robert T.kiyosaki"
+                price="2500 DA"
+                frontCover={bookCover}
+                />
+                <StoreBookCard 
+                title="RICH DAD POOR DAD"
+                author="Robert T.kiyosaki"
+                price="2500 DA"
+                frontCover={bookCover}
+                />
+                <StoreBookCard 
+                title="RICH DAD POOR DAD"
+                author="Robert T.kiyosaki"
+                price="2500 DA"
+                frontCover={bookCover}
+                />
+                <StoreBookCard 
+                title="RICH DAD POOR DAD"
+                author="Robert T.kiyosaki"
+                price="2500 DA"
+                frontCover={bookCover}
+                />
+                <StoreBookCard 
+                title="RICH DAD POOR DAD"
+                author="Robert T.kiyosaki"
+                price="2500 DA"
+                frontCover={bookCover}
+                />
+                <StoreBookCard 
+                title="RICH DAD POOR DAD"
+                author="Robert T.kiyosaki"
+                price="2500 DA"
+                frontCover={bookCover}
+                />
+                <StoreBookCard 
+                title="RICH DAD POOR DAD"
+                author="Robert T.kiyosaki"
+                price="2500 DA"
+                frontCover={bookCover}
+                />
                 
 
             </div>
